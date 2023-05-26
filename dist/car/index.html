@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Astro description">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <meta name="generator" content="Astro v2.5.1">
+        <title>ECCO | Chamunda Auto Consultants</title>
+    <link rel="stylesheet" href="/_astro/addcar.3ababa10.css" />
+<link rel="stylesheet" href="/_astro/car.3ff52a1b.css" /><script type="module">let h=window.location.href;const m=h.match(/id=([^&]+)/)[1];function y(l,c,e){const i={value:c,expiry:new Date().getTime()+e};localStorage.setItem(l,JSON.stringify(i))}function g(l){const c=localStorage.getItem(l);if(!c)return null;const e=JSON.parse(c);return new Date().getTime()>e.expiry?(localStorage.removeItem(l),null):e.value}async function w(){return new Promise(async(l,c)=>{let e;g(m)?e=g(m):(e=await fetch(`/api/${m}`),e=await e.json(),e=e.car[0],y(m,e,60*1e3));let a=document.querySelector(".img-showcase"),i=document.querySelector(".img-select"),s=1;e.Images.forEach(t=>{let n=document.createElement("img");n.src=t,n.setAttribute("alt","car image"),a.appendChild(n);let r=document.createElement("img");r.src=t,r.setAttribute("alt","car image");let o=document.createElement("a");o.href="#",o.setAttribute("data-id",`${s++}`),o.appendChild(r);let d=document.createElement("div");d.classList.add("img-item"),d.appendChild(o),i.appendChild(d)});let f=new Intl.NumberFormat(void 0,{style:"currency",currency:"INR"}),u=document.querySelector(".product-detail ul"),p=[];for(let t in e)if(t=="Name")document.querySelector(".product-title").innerText=e[t];else if(t=="Price")document.querySelector(".new-price span").innerText=`${f.format(e[t])}`;else{if(t=="Images"||t=="_id"||t=="__v")continue;if(t=="Extra Property")console.log(e[t]),e[t].split(",").forEach(n=>{let r=document.createElement("li");r.innerText=n,p.push(r)});else{let n=document.createElement("li");n.innerText=`${t}: `;let r=document.createElement("span");r.innerText=e[t],n.appendChild(r),u.appendChild(n)}}p.forEach(t=>{u.appendChild(t)}),l()})}w().then(()=>{const c=[...document.querySelectorAll(".img-select a")];let e=1;c.forEach(i=>{i.addEventListener("click",s=>{s.preventDefault(),e=i.dataset.id,a()})});function a(){const i=document.querySelector(".img-showcase img:first-child").clientWidth;document.querySelector(".img-showcase").style.transform=`translateX(${-(e-1)*i}px)`}window.addEventListener("resize",a)});
+</script></head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="/_astro/logo-black.685f8a79.png" alt="">
+            </div>
+        </nav>
+
+        <section class="nav_contact container">
+            <ul>
+                <a href="tel:9638017993">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9638017993</span>
+                    </li>
+                </a>
+                <a href="tel:9978714607">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9978714607</span>
+                    </li>
+                </a>
+                <a href="tel:8153098325">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>8153098325</span>
+                    </li>
+                </a>
+            </ul>
+        </section>
+        <div class="clear_both"></div>
+        
+    <main>
+        <div class="card-wrapper">
+            <div class="card">
+                <!-- card left -->
+                <div class="product-imgs">
+                    <div class="img-display">
+                        <div class="img-showcase"></div>
+                    </div>
+                    <div class="img-select"></div>
+                </div>
+                <!-- card right -->
+                <div class="product-content">
+                    <h2 class="product-title">EECO</h2>
+
+                    <div class="product-price">
+                        <p class="new-price">Price: <span>₹5,20,000</span></p>
+                    </div>
+
+                    <div class="product-detail">
+                        <h2>about this Car:</h2>
+                        <ul></ul>
+                    </div>
+
+                    <div class="contact">
+                        <h2>For Contact</h2>
+                        <ul>
+                            <a href="tel:9638017993">
+                                <li>
+                                    <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9638017993</span>
+                                </li>
+                            </a>
+                            <a href="tel:9978714607">
+                                <li>
+                                    <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9978714607</span>
+                                </li>
+                            </a>
+                            <a href="tel:8153098325">
+                                <li>
+                                    <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>8153098325</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="social-links">
+                        <p>Share At:</p>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    </body></html>

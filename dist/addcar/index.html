@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Astro description">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <meta name="generator" content="Astro v2.5.1">
+        <title>ECCO | Chamunda Auto Consultants</title>
+    <link rel="stylesheet" href="/_astro/addcar.3ababa10.css" />
+<link rel="stylesheet" href="/_astro/addcar.3752bc27.css" /><script type="module">let l=document.querySelector(".image_input input");const a=document.querySelector(".preview_images");l.addEventListener("change",o=>{if(window.File&&window.FileReader&&window.FileList&&window.Blob){const t=o.target.files,r=document.querySelector(".img_count");a.innerHTML="",r.innerText=`${t.length} images selected`;for(let n=0;n<t.length;n++){if(!t[n].type.match("image"))continue;const e=new FileReader;e.addEventListener("load",function(s){const u=s.target,d=document.createElement("div");d.innerHTML=`<img class="thumbnail" src="${u.result}" title="${t[n].name}"/>`,a.appendChild(d)}),e.readAsDataURL(t[n])}}else alert("Your browser does not support the File API")});let p=document.querySelectorAll(".remove_element");p.forEach(o=>{o.addEventListener("click",m)});function m(o){o.currentTarget.parentElement.remove()}let i=document.querySelector(".add_property_btn");i.addEventListener("click",o=>{let t=document.createElement("div");t.classList.add("form_group");let r=document.createElement("input");r.classList.add("span_2"),r.setAttribute("name","extra-property"),t.appendChild(r);let n=document.createElement("span");n.classList.add("remove_element"),n.innerHTML='<i class="fa-solid fa-xmark"></i>',n.addEventListener("click",m),t.appendChild(n),i.parentNode.insertBefore(t,i)});let c=document.querySelector(".form");c.addEventListener("submit",o=>{o.preventDefault();let t=new FormData;for(let e=0;e<l.files.length;e++)t.append("images",l.files[e]);let r={"Extra Property":[]};document.querySelectorAll(".form_group input").forEach(e=>{e.getAttribute("name")==="extra-property"?r["Extra Property"].push(e.value):r[e.getAttribute("name")]=e.value});for(let e in r)t.append(e,r[e]);fetch("/api",{method:"POST",body:t}).then(e=>e.json()).then(e=>console.log(e)),c.reset(),a.innerHTML="",document.querySelector(".img_count").innerText="No images Selected"});
+</script></head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="/_astro/logo-black.685f8a79.png" alt="">
+            </div>
+        </nav>
+
+        <section class="nav_contact container">
+            <ul>
+                <a href="tel:9638017993">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9638017993</span>
+                    </li>
+                </a>
+                <a href="tel:9978714607">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9978714607</span>
+                    </li>
+                </a>
+                <a href="tel:8153098325">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>8153098325</span>
+                    </li>
+                </a>
+            </ul>
+        </section>
+        <div class="clear_both"></div>
+        
+    <main class="container">
+        <h1 class="title">Add New Car</h1>
+        <form class="form">
+            <div class="image_input">
+                <label for="images">
+                    <i class="fa fa-solid fa-upload"></i> Upload Images</label>
+                <input type="file" id="images" multiple accept="image/*">
+                <span class="img_count">No images selected</span>
+                <div class="preview_images"></div>
+            </div>
+            <div class="form_group">
+                <label for="car-name">Name</label>
+                <input type="text" id="car-name" name="Name">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-model">Model</label>
+                <input type="text" id="car-model" name="Model">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-price">Price</label>
+                <input type="number" id="car-price" name="Price">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-km">Km driven</label>
+                <input type="number" id="car-km" name="Km driven">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-last-service">Last Service</label>
+                <input type="text" id="car-last-service" name="Last Service">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-owner">Owner</label>
+                <input type="text" id="car-owner" name="Owner">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-fuel-type">Fuel type</label>
+                <input type="text" id="car-fuel-type" name="Fuel type">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-color">Color</label>
+                <input type="text" id="car-color" name="Color">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-keys">Keys</label>
+                <input type="text" id="car-keys" name="Keys">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-registration">Registration</label>
+                <input type="text" id="car-registration" name="Registration">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-registered-in">Registered In</label>
+                <input type="text" id="car-registered-in" name="Registered In">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-insurance">Insurance</label>
+                <input type="text" id="car-insurance" name="Insurance">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="form_group">
+                <label for="car-battery-condition">Battery Condition</label>
+                <input type="text" id="car-battery-condition" name="Battery Condition">
+                <span class="remove_element"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+
+            <button type="button" class="add_property_btn"><i class="fa-solid fa-plus"></i> Add new property</button>
+
+            <button type="submit" class="submit_btn">Add Car</button>
+        </form>
+    </main>
+
+    </body></html>

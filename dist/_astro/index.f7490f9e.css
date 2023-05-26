@@ -1,0 +1,1 @@
+.cars{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.car{cursor:pointer}.car_image img{object-fit:cover}.product-price{font-size:1rem;font-weight:700}.product-price span{font-weight:400}.new-price span{color:#065d06}.car_model span{font-weight:600}@media screen and (min-width: 992px){.cars{grid-template-columns:repeat(4,1fr)}}

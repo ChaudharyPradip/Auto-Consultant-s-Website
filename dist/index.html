@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Astro description">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <meta name="generator" content="Astro v2.5.1">
+        <title>Cars | Chamunda Auto Consultants</title>
+    <link rel="stylesheet" href="/_astro/addcar.3ababa10.css" />
+<link rel="stylesheet" href="/_astro/index.f7490f9e.css" /><script type="module">let a;function s(e,t,n){const i={value:t,expiry:new Date().getTime()+n};localStorage.setItem(e,JSON.stringify(i))}function r(e){const t=localStorage.getItem(e);if(!t)return null;const n=JSON.parse(t);return new Date().getTime()>n.expiry?(localStorage.removeItem(e),null):n.value}r("cars")?a=r("cars"):(a=await fetch("/api"),a=await a.json(),a=a.cars,s("cars",a,60*1e3));let o=new Intl.NumberFormat(void 0,{style:"currency",currency:"INR"}),l=document.querySelector(".cars");a.forEach(e=>{console.log(e);let t=document.createElement("div");t.classList.add("car"),t.innerHTML=`
+            <div class="car_image">
+                <img src="${e.Images[0]}" alt="" />
+            </div>
+            <div class="car_details">
+                <h2 class="car_name">${e.Name}</h2>
+                <div class="product-price">
+                    <p class="new-price">Price: <span>${o.format(e.Price)}</span></p>
+                </div>
+                <p class="car_model">Model: <span> ${e.Model}</span></p>
+            </div>`,t.addEventListener("click",n=>{document.location.href=`${window.location.origin}/car?id=${e._id}`}),l.appendChild(t)});
+</script></head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="/_astro/logo-black.685f8a79.png" alt="">
+            </div>
+        </nav>
+
+        <section class="nav_contact container">
+            <ul>
+                <a href="tel:9638017993">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9638017993</span>
+                    </li>
+                </a>
+                <a href="tel:9978714607">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>9978714607</span>
+                    </li>
+                </a>
+                <a href="tel:8153098325">
+                    <li>
+                        <img src="/_astro/phone-solid.66f5795a.svg" alt=""><span>8153098325</span>
+                    </li>
+                </a>
+            </ul>
+        </section>
+        <div class="clear_both"></div>
+        
+    <main class="cars container"></main>
+
+    </body></html>
